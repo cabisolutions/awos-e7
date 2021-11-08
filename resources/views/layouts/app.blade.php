@@ -26,16 +26,16 @@
                 @csrf
             </form>
             
-             {{-- @include('layouts.navbars.sidebar') --}}
-        @endauth
+            @endauth
+            @include('layouts.navbars.sidebar')
         
         <div class="main-content">
-            {{--@include('layouts.navbars.navbar') --}}
+            @include('layouts.navbars.navbar')
             @yield('content')
         </div>
 
         @guest()
-            {{--@include('layouts.footers.guest') --}}
+            @include('layouts.footers.guest')
         @endguest
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
