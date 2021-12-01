@@ -67,6 +67,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
+
+	Route::resource('categorias', 'CategoriaController');
+
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
