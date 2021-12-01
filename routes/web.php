@@ -106,3 +106,18 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 });
 
+Route::get('enviar', ['as' => 'enviar', function () {
+    $data = ['link' => 'http://styde.net'];
+    \Mail::send('emails.notificacion', $data, function ($message) {
+        $message->from('email@styde.net', 'Styde.Net');
+        $message->to('user@example.com')->subject('Notificación');
+    });
+    return "Se envío el email";
+}]);
+
+// Auth::routes(['verify' => true]);
+
+// Route::get('profile', function () {
+//     // Only verified users may enter...
+// })->middleware('verified');
+
