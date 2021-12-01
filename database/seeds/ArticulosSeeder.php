@@ -1,5 +1,6 @@
 <?php
 
+use App\Articulo;
 use Illuminate\Database\Seeder;
 
 class ArticulosSeeder extends Seeder
@@ -11,6 +12,7 @@ class ArticulosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $cantidad = 10;
+        factory(Articulo::class, $cantidad)->create();
     }
 }

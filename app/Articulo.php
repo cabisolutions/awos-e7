@@ -14,7 +14,7 @@ class Articulo extends Model
     use SoftDeletes;
     /* declaramos nuestros campos de nuestra tabla tags*/
     protected $fillable = [
-        'titutlo',
+        'titulo',
         'imagen',
         'subtitulo',
         'contenido',

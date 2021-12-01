@@ -70,6 +70,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::resource('categorias', 'CategoriaController');
 
+	Route::resource('articulos', 'ArticuloController');
+
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');

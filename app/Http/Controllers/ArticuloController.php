@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Articulo;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
 class ArticuloController extends Controller
@@ -14,7 +15,8 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        //
+        $articulos = Articulo::all();
+        return view('articulos.index', compact('articulos'));
     }
 
     /**
@@ -35,7 +37,8 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return View('articulos.index');
+        
     }
 
     /**

@@ -15,16 +15,16 @@ class CreateArticulosTable extends Migration
     {
         Schema::create('articulos', function (Blueprint $table) {
             $table->increments('id','40');
-            $table->string('title','255');
-            $table->string('imagen','150');
-            $table->string('subtitulo','150');
-            $table->text('contenido','102');
+            $table->string('titulo','255')->nullable();
+            $table->string('imagen','150')->nullable();
+            $table->string('subtitulo','150')->nullable();
+            $table->text('contenido','102')->nullable();
         //declaracion de llaves foraneas
             //$table->integer('categoria_id')->unsigned();
-            $table->unsignedBigInteger('categoria_id');
+            $table->unsignedBigInteger('categoria_id')->nullable();
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
             //$table->integer('imagen_id')->unsigned();
-            $table->unsignedBigInteger('imagen_id');
+            $table->unsignedBigInteger('imagen_id')->nullable();
             $table->foreign('imagen_id')->references('id')->on('imagenes')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

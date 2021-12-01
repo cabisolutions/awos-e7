@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\articulos;
+use App\Articulo;
 use Faker\Generator as Faker;
 
-$factory->define(articulos::class, function (Faker $faker) {
+$factory->define(Articulo::class, function (Faker $faker) {
     return [
-        //
+        'titulo' => $faker-> word
     ];
 });
