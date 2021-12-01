@@ -17,7 +17,7 @@
             <p>{{ __('Dashboard') }}</p>
         </a>
       </li>
-      <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
+      {{-- <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
           <p>{{ __('Laravel Examples') }}
@@ -26,22 +26,40 @@
         </a>
         <div class="collapse show" id="laravelExample">
           <ul class="nav">
-            <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
+            -- <li class="nav-item{{ $activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('profile.edit') }}">
                 <span class="sidebar-mini"> UP </span>
                 <span class="sidebar-normal">{{ __('User profile') }} </span>
-              </a>
-            </li>
-            <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
-                <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
-              </a>
+              </a> -
             </li>
           </ul>
         </div>
+      </li> --}}
+      {{-- <li class="nav-item{{ $activePage == 'user-management' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('user.index') }}">
+          <span class="sidebar-mini"> UM </span>
+          <span class="sidebar-normal"> {{ __('Usuarios') }} </span>
+        </a>
+      </li> --}}
+      <li class="nav-item{{ $activePage == 'usuarios' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('user.index') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Usuarios') }}</p>
+        </a>
       </li>
-      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+      <li class="nav-item{{ $activePage == 'articulos' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('table') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Articulos') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'categorias' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('table') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Categorias') }}</p>
+        </a>
+      </li>
+      {{-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Table List') }}</p>
@@ -82,7 +100,7 @@
           <i class="material-icons">unarchive</i>
           <p>{{ __('Upgrade to PRO') }}</p>
         </a>
-      </li>
+      </li> --}}
     </ul>
   </div>
 </div>
