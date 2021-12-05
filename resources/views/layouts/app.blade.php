@@ -18,6 +18,8 @@
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
+      <!-- here -->
+    @if ( !@isset($title) or $title != 'VerificarEmail')
         @auth()
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
@@ -27,6 +29,10 @@
         @guest()
             @include('layouts.page_templates.guest')
         @endguest
+
+        @else 
+            @include('layouts.page_templates.guest')
+        @endif
         
         <div class="fixed-plugin">
           <div class="dropdown show-dropdown">

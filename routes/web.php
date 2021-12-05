@@ -59,12 +59,11 @@ Route::get('/table', function() {
     return view('pages.tables');
 })->name('table');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
 
+Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
@@ -112,9 +111,4 @@ Route::get('enviar', ['as' => 'enviar', function () {
     return "Se envío el email";
 }]);
 
-// Auth::routes(['verify' => true]);
-
-// Route::get('profile', function () {
-//     // Only verified users may enter...
-// })->middleware('verified');
 
