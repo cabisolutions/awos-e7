@@ -44,19 +44,19 @@
       <li class="nav-item{{ $activePage == 'usuarios' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('user.index') }}">
           <i class="material-icons">content_paste</i>
-            <p>{{ __('Usuarios') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'articulos' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('table') }}">
-          <i class="material-icons">content_paste</i>
-            <p>{{ __('Articulos') }}</p>
+          <p>{{ __('Usuarios') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'categorias' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('table') }}">
+        <a class="nav-link" href="{{ route('categorias.index') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Categorias') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{ $activePage == 'articulos' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('articulos.index') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Articulos') }}</p>
         </a>
       </li>
       {{-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
