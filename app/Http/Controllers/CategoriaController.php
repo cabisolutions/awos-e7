@@ -26,7 +26,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -39,6 +39,8 @@ class CategoriaController extends Controller
     {
         //
     }
+
+
 
     /**
      * Display the specified resource.
@@ -59,7 +61,7 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        //
+        
     }
 
     /**

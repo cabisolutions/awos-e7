@@ -1,6 +1,6 @@
-@extends('layouts.app', ['activePage' => 'articulos', 'titlePage' => __('Articulos')])
+@extends('layouts.app', ['activePage' => 'categorias', 'titlePage' => __('Categorias')])
 
-@section('title', 'Articulos')
+@section('title', 'Categorias')
 
 @section('content')
     <div class="content">
@@ -30,30 +30,30 @@
                                 <div class="col-12 text-right">
                                     {{-- Buton del modal --}}
                                     <button class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#nuevaarticModal">
+                                        data-bs-target="#nuevaCategoriaModal">
                                         <i class="material-icons">add</i>
                                     </button>
                                     {{-- Modal --}}
-                                    <div class="modal fade" id="nuevaarticModal" tabindex="-1"
-                                        aria-labelledby="nuevaarticModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="nuevaCategoriaModal" tabindex="-1"
+                                        aria-labelledby="nuevaCategoriaModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="nuevaarticModalLabel">Ingresa
-                                                        artic </h5>
+                                                    <h5 class="modal-title" id="nuevaCategoriaModalLabel">Ingresa
+                                                        Categoria </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label=""></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ route('articulos.store') }}" method="POST">
+                                                    <form action="{{ route('categorias.store') }}" method="POST">
                                                         {{-- generar el token para el envio de dato csrf --}}
                                                         {{ csrf_field() }}
                                                         <div class="modal-body">
                                                             <div class="input-group mb-3">
-                                                                <span class="input-group-text" id="nombre">artic</span>
+                                                                <span class="input-group-text" id="nombre">Categoria</span>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Estampado" aria-label="nombre"
-                                                                    aria-describedby="nombre" id="inputNuevaartic"
+                                                                    aria-describedby="nombre" id="inputNuevaCategoria"
                                                                     name="nombre">
                                                             </div>
                                                         </div>
@@ -68,28 +68,28 @@
                                         </div>
                                     </div>
 
-                                    <div class="modal fade" id="actualizararticModal" tabindex="-1"
-                                        aria-labelledby="actualizararticModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="actualizarCategoriaModal" tabindex="-1"
+                                        aria-labelledby="actualizarCategoriaModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="actualizararticModalLabel">Ingresa
-                                                        artic </h5>
+                                                    <h5 class="modal-title" id="actualizarCategoriaModalLabel">Ingresa
+                                                        Categoria </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label=""></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ route('articulos.store') }}" method="POST">
-                                                    <span class="input-group-text" id="nombre">artic</span>
+                                                    <form action="{{ route('categorias.store') }}" method="POST">
+                                                    <span class="input-group-text" id="nombre">Categoria</span>
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Estampado" aria-label="nombre"
-                                                                    aria-describedby="nombre" id="actualizarartic"
+                                                                    aria-describedby="nombre" id="actualizarCategoria"
                                                                     name="nombre">
                                                             </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Cancelar</button>
-                                                            <button type="submit" class="btn btn-primary waves-effect waves-light" form="actualizararticFormulario">Actualizar</button>
+                                                            <button type="submit" class="btn btn-primary waves-effect waves-light" form="actualizarCategoriaFormulario">Actualizar</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -108,20 +108,18 @@
                                         <th class="text-right">Acciones</th>
                                     </thead>
                                     <tbody>
-                                        @foreach ($articulos as $articulo)
+                                        @foreach ($categorias as $categoria)
                                             <tr>
-                                                <td>{{ $articulo->id }}</td>
-                                                <td>{{ $articulo->titulo }}</td>
-                                                <td>{{ $articulo->subtitulo }}</td>
-                                                <td>{{ $articulo->contenido }}</td>
+                                                <td>{{ $categoria->id }}</td>
+                                                <td>{{ $categoria->nombre }}</td>
                                                 <td class="text-right">
                                                     <button type="button"
                                                         class="btn btn-warning btn-link m-0 p-2 dropdown-toggle waves-effect waves-light"
-                                                        data-toggle="modal" data-target="#actualizararticModal"
-                                                        data-id="{{ $articulo->id }}"">
+                                                        data-toggle="modal" data-target="#actualizarCategoriaModal"
+                                                        data-id="{{ $categoria->id }}"">
                                                         <i class="material-icons">edit</i>
                                                     </button>
-                                                    <form action="{{ route('articulos.destroy', $articulo) }}"
+                                                    <form action="{{ route('categorias.destroy', $categoria) }}"
                                                         method="post" class="d-inline">
                                                         @csrf
                                                         @method('delete')
@@ -145,8 +143,8 @@
         </div>
     </div>
     <script>
-        const myModal = document.getElementById('nuevaarticModal')
-        const myInput = document.getElementById('inputNuevaartic')
+        const myModal = document.getElementById('nuevaCategoriaModal')
+        const myInput = document.getElementById('inputNuevaCategoria')
         myModal.addEventListener('shown.bs.modal', function() {
             myInput.focus()
         })
