@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -77,7 +78,10 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Categoria $Categoria)
     {
-        //
+        // Update the model
+        $Categoria->update($request->all());
+        // Redirect to the categoria management page
+        return redirect()->route('categorias.index')->with('status', 'Categoria actualizada con éxito');
     }
 
     /**

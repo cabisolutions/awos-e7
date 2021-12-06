@@ -113,12 +113,10 @@
                                                 <td>{{ $categoria->id }}</td>
                                                 <td>{{ $categoria->nombre }}</td>
                                                 <td class="text-right">
-                                                    <button type="button"
-                                                        class="btn btn-warning btn-link m-0 p-2 dropdown-toggle waves-effect waves-light"
-                                                        data-toggle="modal" data-target="#actualizarCategoriaModal"
-                                                        data-id="{{ $categoria->id }}">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
+                                                    <a type="button"
+                                                    class="btn btn-warning btn-link m-0 p-2 dropdown-toggle waves-effect waves-light" href="{{ route('categorias.edit', $categoria) }}">
+                                                    <i class="material-icons">edit</i>
+                                                    </a>
                                                     <form action="{{ route('categorias.destroy', $categoria) }}"
                                                         method="post" class="d-inline">
                                                         @csrf
