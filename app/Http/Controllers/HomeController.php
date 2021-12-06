@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Category;
+use App\Images;
+use App\Article;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // $users = User::count();
+        // $categoryes = Category::count();
+        // $images = Images::count();
+        // $articles = Article::count();
+    
+        // return view('index', [
+        //     'users' => $users,
+        //     'categoryes' => $categoryes,
+        //     'images' => $images,
+        //     'articles' => $articles
+
+        // ]);
+
         return view('dashboard');
     }
 }

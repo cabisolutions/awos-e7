@@ -116,7 +116,7 @@
                                                     <button type="button"
                                                         class="btn btn-warning btn-link m-0 p-2 dropdown-toggle waves-effect waves-light"
                                                         data-toggle="modal" data-target="#actualizarCategoriaModal"
-                                                        data-id="{{ $categoria->id }}"">
+                                                        data-id="{{ $categoria->id }}">
                                                         <i class="material-icons">edit</i>
                                                     </button>
                                                     <form action="{{ route('categorias.destroy', $categoria) }}"
@@ -125,7 +125,7 @@
                                                         @method('delete')
                                                         <button type="button" class="btn btn-danger btn-link m-0 p-2"
                                                             data-original-title="" title=""
-                                                            onclick="confirm('{{ __('Confirma para eliminar este registro') }}') ? this.parentElement.submit() : ''">
+                                                            onclick="confirm('Confirma para eliminar este registro') ? this.parentElement.submit() : ''">
                                                             <i class="material-icons">delete</i>
                                                             <div class="ripple-container"></div>
                                                         </button>
@@ -135,6 +135,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                {{$categorias->links()}}
                             </div>
                         </div>
                     </div>

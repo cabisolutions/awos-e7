@@ -138,6 +138,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            {{$articulos->links()}}
                         </div>
                     </div>
                 </div>

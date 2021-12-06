@@ -16,7 +16,12 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
-        return view('users.index', ['users' => $model->paginate(15)]);
+        // return view('users.index', ['users' => $model->paginate(15)]);
+        $users = User::latest()->paginate(10);
+        return view('users.index', [
+            // 'categorias' => Categoria::all()
+            'users' => $users
+        ]);
     }
 
     /**
