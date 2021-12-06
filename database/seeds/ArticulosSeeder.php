@@ -12,7 +12,7 @@ class ArticulosSeeder extends Seeder
      */
     public function run()
     {
-        $cantidad = 10;
+        $cantidad = 50;
         factory(Articulo::class, $cantidad)->create();
     }
 }

@@ -12,7 +12,7 @@ class CategoriasSeeder extends Seeder
      */
     public function run()
     {
-        $cantidad = 10;
+        $cantidad = 50;
         factory(Categoria::class, $cantidad)->create();
     }
 }
