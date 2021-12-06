@@ -29,8 +29,10 @@ class ArticuloController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+
+        $categorias = \App\Categoria::all();
+        return view('articulos.create', compact('categorias'));
     }
 
     /**

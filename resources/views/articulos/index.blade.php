@@ -28,45 +28,9 @@
                             @endif
                             <div class="row">
                                 <div class="col-12 text-right">
-                                    {{-- Buton del modal --}}
-                                    <button class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#nuevaarticModal">
+                                    <a class="btn btn-primary" href="{{ route('articulos.create') }}">
                                         <i class="material-icons">add</i>
-                                    </button>
-                                    {{-- Modal --}}
-                                    <div class="modal fade" id="nuevaarticModal" tabindex="-1"
-                                        aria-labelledby="nuevaarticModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="nuevaarticModalLabel">Ingresa
-                                                        artic </h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label=""></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form action="{{ route('articulos.store') }}" method="POST">
-                                                        {{-- generar el token para el envio de dato csrf --}}
-                                                        {{ csrf_field() }}
-                                                        <div class="modal-body">
-                                                            <div class="input-group mb-3">
-                                                                <span class="input-group-text" id="nombre">artic</span>
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Estampado" aria-label="nombre"
-                                                                    aria-describedby="nombre" id="inputNuevaartic"
-                                                                    name="nombre">
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-bs-dismiss="modal">Cancelar</button>
-                                                            <input type="submit" class="btn btn-primary" value="Guardar">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </a>
 
                                     <div class="modal fade" id="actualizararticModal" tabindex="-1"
                                         aria-labelledby="actualizararticModalLabel" aria-hidden="true">
