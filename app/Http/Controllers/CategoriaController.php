@@ -26,7 +26,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        
+        return view('categorias.create');
     }
 
     /**
@@ -61,7 +61,9 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        
+        return view('categorias.edit', [
+            'categoria' => $categoria
+        ]);
     }
 
     /**
