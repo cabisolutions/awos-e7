@@ -52,11 +52,11 @@ Route::get('/icons', function() {
 })->name('icons');
 
 Route::get('/map', function() {
-    return view('pages.maps');
+	return view('pages.maps');
 })->name('map');
 
 Route::get('/table', function() {
-    return view('pages.tables');
+	return view('pages.tables');
 })->name('table');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -66,11 +66,12 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
-
+	
 	Route::resource('categorias', 'CategoriaController');
-
+	
 	Route::resource('articulos', 'ArticuloController');
-
+	Route::get('articulosd', 'ArticuloController@create');
+	
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
@@ -115,5 +116,6 @@ Route::get('enviar', ['as' => 'enviar', function () {
     });
     return "Se envío el email";
 }]);
+
 
 

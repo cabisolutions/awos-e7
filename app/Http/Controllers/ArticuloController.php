@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Categoria;
 use App\Articulo;
 use Facade\FlareClient\View;
 use Illuminate\Http\Request;

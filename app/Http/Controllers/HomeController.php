@@ -7,6 +7,9 @@ use App\User;
 use App\Category;
 use App\Images;
 use App\Article;
+use App\Articulo;
+use App\Categoria;
+use App\Imagen;
 
 class HomeController extends Controller
 {
@@ -27,18 +30,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $users = User::count();
-        // $categoryes = Category::count();
-        // $images = Images::count();
-        // $articles = Article::count();
+         $users = User::count();
+         $categorias= Categoria::count();
+        //  $imagenes = Imagen::count();
+         $articulos = Articulo::count();
     
-        // return view('index', [
-        //     'users' => $users,
-        //     'categoryes' => $categoryes,
-        //     'images' => $images,
-        //     'articles' => $articles
+        return view('dashboard', [
+            'users' => $users,
+            'categorias' => $categorias,
+            // 'imagenes' => $imagenes,
+            'articulos' => $articulos
 
-        // ]);
+        ]);
 
         return view('dashboard');
     }

@@ -10,9 +10,9 @@
               <div class="card-icon">
                 <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Used Space</p>
-              <h3 class="card-title">49/50
-                <small>GB</small>
+              <p class="card-category">Usuarios</p>
+              <h3 class="card-title">{{$users}}
+                <!-- <small>GB</small> -->
               </h3>
             </div>
             <div class="card-footer">
@@ -29,8 +29,8 @@
               <div class="card-icon">
                 <i class="material-icons">store</i>
               </div>
-              <p class="card-category">Revenue</p>
-              <h3 class="card-title">$34,245</h3>
+              <p class="card-category">Categorias</p>
+              <h3 class="card-title">{{$categorias}}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -45,8 +45,8 @@
               <div class="card-icon">
                 <i class="material-icons">info_outline</i>
               </div>
-              <p class="card-category">Fixed Issues</p>
-              <h3 class="card-title">75</h3>
+              <p class="card-category">Articulos</p>
+              <h3 class="card-title">{{$articulos}}</h3>
             </div>
             <div class="card-footer">
               <div class="stats">
@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-4">
           <div class="card card-chart">
             <div class="card-header card-header-success">
@@ -122,8 +122,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
+      </div> -->
+      <!-- <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
@@ -222,8 +222,8 @@
                           </button>
                         </td>
                       </tr>
-                      <tr>
-                        <td>
+                      <tr> -->
+                        <!-- <td>
                           <div class="form-check">
                             <label class="form-check-label">
                               <input class="form-check-input" type="checkbox" value="" checked>
@@ -415,7 +415,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 @endsection
 
 @push('js')
