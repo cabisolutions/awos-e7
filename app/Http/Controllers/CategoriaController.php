@@ -40,7 +40,16 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Store new categoria
+        $categoria = new Categoria;
+        $categoria->nombre = $request->nombre;
+
+        // Save
+        $categoria->save();
+
+        // Redirect
+        return redirect()->route('categorias.index')->with('status', 'Categoria guardada con exito');
+        
     }
 
 
@@ -92,6 +101,9 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $Categoria)
     {
-        //
+        // Desctroy categoria
+        $Categoria->delete();
+        // Redirect
+        return redirect()->route('categorias.index')->with('status', 'Categoria eliminada con éxito');
     }
 }
